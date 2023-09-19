@@ -1,0 +1,186 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      table th {
+        background-color: gray;
+        text-align: center;
+        padding: 2px 8px;
+      }
+      table td {
+        text-align: center;
+        padding: 2px 8px;
+      }
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #fff;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        border-left: 1px solid black;
+        padding-left: 12px;
+      }
+    </style>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginRight = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="w-full mx-auto max-h-fit h-full relative">
+      <button
+        class="absolute h-12 w-6 bg-blue-200 right-0 top-1/2"
+        onclick="openNav()"
+      ></button>
+      <div class="pt-2 mt-16 mx-8 bg-blue-200 relative">
+        <div class="flex flex-wrap gap-x-4 justify-center py-3">
+          <div class="flex flex-col w-28">
+            <p class="text-center">준 비</p>
+            <p class="h-2 bg-blue-600"></p>
+          </div>
+          <div class="flex flex-col w-28">
+            <p class="text-center">라벨링</p>
+            <p class="h-2 bg-blue-600"></p>
+          </div>
+          <div class="flex flex-col w-28">
+            <p class="text-center">모델학습</p>
+            <p class="h-2 bg-blue-600"></p>
+          </div>
+          <div class="flex flex-col w-28">
+            <p class="text-center">라벨비교</p>
+            <p class="h-2 bg-gray-200"></p>
+          </div>
+          <button
+            class="absolute right-4 py-1 px-3 ring-2 border border-black bg-white ring-slate-400"
+          >
+            오토라벨링
+          </button>
+        </div>
+      </div>
+      <div class="pt-8 px-8">
+        <div class="grid grid-cols-2 h-full">
+          <div class="h-full w-full border-r border-black">
+            <table class="mx-auto align-middle border border-collapse">
+              <th>NO</th>
+              <th>
+                프로젝트<br />
+                NO
+              </th>
+              <th>학습명</th>
+              <th>생성자</th>
+              <th>상태</th>
+              <th>모델</th>
+              <tr>
+                <td>1</td>
+                <td>2003</td>
+                <td>이미지 딥러닝 3</td>
+                <td>홍길동</td>
+                <td>Completed</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>2002</td>
+                <td>이미지 딥러닝 2</td>
+                <td>홍길동</td>
+                <td>Completed</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>2001</td>
+                <td>이미지 딥러닝 1</td>
+                <td>홍길동</td>
+                <td>Completed</td>
+              </tr>
+            </table>
+          </div>
+          <div class="h-full w-full">
+            <div class="flex flex-wrap justify-between">
+              <div class="flex gap-x-4 px-4">
+                <button class="py-1 px-3 bg-slate-400 border border-black">
+                  상세정보
+                </button>
+                <button
+                  class="py-1 px-3 ring-2 border border-black bg-white ring-slate-400"
+                >
+                  학습결과
+                </button>
+              </div>
+              <div class="flex gap-x-4 px-4">
+                <button class="py-1 px-3 bg-white border border-black">
+                  저장
+                </button>
+                <button class="py-1 px-3 border border-black bg-white">
+                  삭제
+                </button>
+              </div>
+            </div>
+            <div class="flex flex-col gap-y-4 pt-4">
+              <div class="p-4 border border-1">
+                <canvas id="LineChart"></canvas>
+                <canvas id="LineChart1"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section id="mySidebar" class="sidebar">
+      <button class="absolute top-4 right-8" onclick="closeNav()">x</button>
+      <p>123</p>
+      <p>123</p>
+      <p>123</p>
+      <p>123</p>
+    </section>
+    <script>
+      const lineChart = document.getElementById("LineChart");
+      new Chart(lineChart, {
+        type: "line",
+        data: {
+          labels: ["1", "2", "3", "4", "5", "6", "7"],
+          datasets: [
+            {
+              label: "Line Chart",
+              data: [65, 59, 80, 81, 56, 55, 40],
+              borderColor: "rgb(75, 192, 192)",
+              fill: false,
+              tension: 0.1,
+            },
+          ],
+        },
+      });
+      const lineChart1 = document.getElementById("LineChart1");
+      new Chart(lineChart1, {
+        type: "line",
+        data: {
+          labels: ["1", "2", "3", "4", "5", "6", "7"],
+          datasets: [
+            {
+              label: "Line Chart",
+              data: [65, 59, 80, 81, 56, 55, 40],
+              borderColor: "rgb(75, 192, 192)",
+              fill: false,
+              tension: 0.1,
+            },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>

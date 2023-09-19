@@ -1,0 +1,234 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <style>
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      background-color: #fff;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      border-left: 1px solid black;
+    }
+    table th {
+      text-align: center;
+      padding: 2px 4px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    table td {
+      text-align: center;
+      padding: 2px 4px;
+    }
+  </style>
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "200px";
+      document.getElementById("main").style.marginRight = "200px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginRight = "0";
+    }
+  </script>
+
+  <body id="main">
+    <div class="w-full h-full relative">
+      <button
+        class="absolute h-12 w-6 bg-blue-200 right-0 top-1/2"
+        onclick="openNav()"
+      ></button>
+      <div class="pt-2 mt-16 mx-8 bg-blue-200 relative">
+        <div class="flex flex-wrap gap-x-4 justify-center py-3">
+          <div class="flex flex-col w-28">
+            <p class="text-center">준 비</p>
+            <p class="h-2 bg-blue-600"></p>
+          </div>
+          <div class="flex flex-col w-28">
+            <p class="text-center">라벨링</p>
+            <p class="h-2 bg-blue-600"></p>
+          </div>
+          <div class="flex flex-col w-28">
+            <p class="text-center">모델학습</p>
+            <p class="h-2 bg-gray-200"></p>
+          </div>
+          <div class="flex flex-col w-28">
+            <p class="text-center">라벨비교</p>
+            <p class="h-2 bg-gray-200"></p>
+          </div>
+          <button
+            class="openbtn absolute right-4 py-1 px-3 ring-2 border border-black bg-white ring-slate-400"
+            onclick="openNav()"
+          >
+            오토라벨링
+          </button>
+        </div>
+      </div>
+      <div class="pt-8 px-8">
+        <div class="flex flex-wrap justify-between">
+          <p>프로젝트명;오토라벨링 테스트</p>
+          <button
+            class="py-1 px-3 ring-2 border border-black bg-white ring-slate-400"
+          >
+            검증완료
+          </button>
+        </div>
+        <div class="flex flex-wrap justify-between">
+          <div class="flex flex-wrap gap-x-2 pt-4">
+            <p>
+              <button class="py-[1px] px-5 border border-gray-200 rounded-l-lg">
+                Images</button
+              ><button
+                class="py-[1px] px-5 border border-gray-200 rounded-r-lg"
+              >
+                Instances
+              </button>
+            </p>
+            <button class="py-[1px] px-5 border border-gray-200 rounded-lg">
+              Filter
+            </button>
+            <button class="py-[1px] px-5 border border-gray-200 rounded-lg">
+              Sort
+            </button>
+          </div>
+          <div class="flex flex-wrap items-center gap-x-2">
+            <p>이미지 선택</p>
+            <img src="maximize.png" class="w-4 h-4 bg-gray-200" />
+            <img src="minimization.png" class="w-4 h-4 bg-gray-200" />
+          </div>
+        </div>
+        <div class="grid grid-cols-5 gap-2 pt-4 mx-auto">
+          <p class="relative">
+            <input type="checkbox" class="absolute top-3 left-2 w-8 h-8" />
+            <img src="forest.jpg" class="aspect-square" />
+          </p>
+          <p class="relative">
+            <input type="checkbox" class="absolute top-3 left-2 w-8 h-8" />
+            <img src="forest.jpg" class="aspect-square" />
+          </p>
+          <p class="relative">
+            <input type="checkbox" class="absolute top-3 left-2 w-8 h-8" />
+            <img src="forest.jpg" class="aspect-square" />
+          </p>
+          <p class="relative">
+            <input type="checkbox" class="absolute top-3 left-2 w-8 h-8" />
+            <img src="forest.jpg" class="aspect-square" />
+          </p>
+          <p class="relative">
+            <input type="checkbox" class="absolute top-3 left-2 w-8 h-8" />
+            <img src="forest.jpg" class="aspect-square" />
+          </p>
+          <p class="relative">
+            <input type="checkbox" class="absolute top-3 left-2 w-8 h-8" />
+            <img src="forest.jpg" class="aspect-square" />
+          </p>
+          <p class="relative">
+            <input type="checkbox" class="absolute top-3 left-2 w-8 h-8" />
+            <img src="forest.jpg" class="aspect-square" />
+          </p>
+          <p class="relative">
+            <input type="checkbox" class="absolute top-3 left-2 w-8 h-8" />
+            <img src="forest.jpg" class="aspect-square" />
+          </p>
+          <p class="relative">
+            <input type="checkbox" class="absolute top-3 left-2 w-8 h-8" />
+            <img src="forest.jpg" class="aspect-square" />
+          </p>
+          <p class="relative">
+            <input type="checkbox" class="absolute top-3 left-2 w-8 h-8" />
+            <img src="forest.jpg" class="aspect-square" />
+          </p>
+          <p class="relative">
+            <input type="checkbox" class="absolute top-3 left-2 w-8 h-8" />
+            <img src="forest.jpg" class="aspect-square" />
+          </p>
+          <p class="relative">
+            <input type="checkbox" class="absolute top-3 left-2 w-8 h-8" />
+            <img src="forest.jpg" class="aspect-square" />
+          </p>
+        </div>
+        <section id="mySidebar" class="sidebar">
+          <button class="absolute top-4 right-8" onclick="closeNav()">x</button>
+          <div class="pt-4 px-2">
+            <p class="text-red-600">모델 성능</p>
+            <div class="flex flex-wrap gap-x-8">
+              <div class="flex flex-col">
+                <p>IoU</p>
+                <p>100%</p>
+              </div>
+              <div class="flex flex-col">
+                <p>mAP</p>
+                <p>99.5%</p>
+              </div>
+            </div>
+            <div class="pt-8">
+              <p class="pb-2">Confidence Threshold</p>
+              <div
+                class="w-3/5 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"
+              >
+                <div
+                  class="bg-blue-600 h-2.5 rounded-full"
+                  style="width: 45%"
+                ></div>
+              </div>
+            </div>
+            <div class="pt-4">
+              <p class="text-red-600">결과</p>
+              <table>
+                <tr>
+                  <th>Label</th>
+                  <th>미확인</th>
+                  <th>확인</th>
+                </tr>
+                <tr>
+                  <td>Fire(4)</td>
+                  <td class="underline text-red-600">3</td>
+                  <td class="underline">1</td>
+                </tr>
+                <tr>
+                  <td>Tree(4)</td>
+                  <td class="underline text-red-600">3</td>
+                  <td class="underline">0</td>
+                </tr>
+                <tr>
+                  <td>Cloud(7)</td>
+                  <td class="underline text-red-600">5</td>
+                  <td class="underline">2</td>
+                </tr>
+                <tr>
+                  <td>Smoke(3)</td>
+                  <td class="underline text-red-600">0</td>
+                  <td class="underline">3</td>
+                </tr>
+              </table>
+            </div>
+            <div class="pt-4">
+              <p class="text-red-600">불일치</p>
+              <table>
+                <tr>
+                  <th>Label</th>
+                  <th>미확인</th>
+                  <th>확인</th>
+                </tr>
+                <tr>
+                  <td>Smoke</td>
+                  <td class="underline text-red-600">X</td>
+                  <td class="underline">1</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

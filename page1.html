@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="w-full mx-auto h-full relative">
+    <div class="grid grid-cols-2 gap-x-4 px-12 mt-16">
+      <div class="p-4 border border-1"><canvas id="myChart"></canvas></div>
+      <div class="p-4 border border-1"><canvas id="BarChart"></canvas></div>
+    </div>
+
+    <div class="flex flex-wrap gap-x-4 mt-16 justify-center">
+      <button
+        class="flex border-dotted border-2 w-80 h-80 rounded-lg text-center items-center"
+      >
+        <span class="w-full">프로젝트생성</span>
+      </button>
+      <div
+        class="flex w-80 h-80 rounded-lg text-center items-center relative bg-[url('./forest.jpg')] bg-cover"
+      >
+        <p
+          class="absolute left-0 bottom-0 h-20 bg-[#3ff] w-full rounded-lg flex flex-col"
+        >
+          <span class="text-lg">오토라벨링 테스트</span>
+          <span class="text-sm">홍길동 2023.08.10</span>
+        </p>
+      </div>
+      <div
+        class="flex w-80 h-80 rounded-lg text-center items-center relative bg-[url('./forest.jpg')] bg-cover"
+      >
+        <p
+          class="absolute left-0 bottom-0 h-20 bg-[#3ff] w-full rounded-lg flex flex-col"
+        >
+          <span class="text-lg">오토라벨링 테스트</span>
+          <span class="text-sm">홍길동 2023.08.10</span>
+        </p>
+      </div>
+      <div
+        class="flex w-80 h-80 rounded-lg text-center items-center relative bg-[url('./forest.jpg')] bg-cover"
+      >
+        <p
+          class="absolute left-0 bottom-0 h-20 bg-[#3ff] w-full rounded-lg flex flex-col"
+        >
+          <span class="text-lg">오토라벨링 테스트</span>
+          <span class="text-sm">홍길동 2023.08.10</span>
+        </p>
+      </div>
+    </div>
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+      const barChart = document.getElementById("BarChart");
+
+      new Chart(barChart, {
+        type: "bar",
+        data: {
+          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          datasets: [
+            {
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      table th {
+        background-color: gray;
+        text-align: center;
+        padding: 2px 8px;
+      }
+      table td {
+        text-align: center;
+        padding: 2px 8px;
+      }
+      table td,
+      th {
+        border: 1px solid;
+        border-collapse: collapse;
+      }
+
+      #rightTable th {
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w-full mx-auto max-h-fit h-full relative">
+      <div class="pt-2 mt-16 mx-8 bg-blue-200 relative">
+        <div class="flex flex-wrap gap-x-4 justify-center py-3">
+          <div class="flex flex-col w-28">
+            <p class="text-center">준 비</p>
+            <p class="h-2 bg-blue-600"></p>
+          </div>
+          <div class="flex flex-col w-28">
+            <p class="text-center">라벨링</p>
+            <p class="h-2 bg-blue-600"></p>
+          </div>
+          <div class="flex flex-col w-28">
+            <p class="text-center">모델학습</p>
+            <p class="h-2 bg-gray-600"></p>
+          </div>
+          <div class="flex flex-col w-28">
+            <p class="text-center">라벨비교</p>
+            <p class="h-2 bg-gray-200"></p>
+          </div>
+          <button
+            class="absolute right-4 py-1 px-3 ring-2 border border-black bg-white ring-slate-400"
+          >
+            오토라벨링
+          </button>
+        </div>
+      </div>
+      <div class="pt-8 px-8">
+        <div class="grid grid-cols-2 h-full">
+          <div class="h-full w-full border-r border-black">
+            <table class="mx-auto align-middle border border-collapse">
+              <th>NO</th>
+              <th>
+                프로젝트<br />
+                NO
+              </th>
+              <th>학습명</th>
+              <th>생성자</th>
+              <th>상태</th>
+              <th>모델</th>
+              <tr>
+                <td>1</td>
+                <td>2003</td>
+                <td>이미지 딥러닝 3</td>
+                <td>홍길동</td>
+                <td>Completed</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>2002</td>
+                <td>이미지 딥러닝 2</td>
+                <td>홍길동</td>
+                <td>Completed</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>2001</td>
+                <td>이미지 딥러닝 1</td>
+                <td>홍길동</td>
+                <td>Completed</td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="h-full w-full">
+            <div class="flex flex-wrap justify-between">
+              <div class="flex gap-x-4 px-4">
+                <button class="py-1 px-3 bg-slate-400 border border-black">
+                  상세정보
+                </button>
+                <button
+                  class="py-1 px-3 ring-2 border border-black bg-white ring-slate-400"
+                >
+                  학습결과
+                </button>
+              </div>
+              <div class="flex gap-x-4 px-4">
+                <button class="py-1 px-3 bg-white border border-black">
+                  저장
+                </button>
+                <button class="py-1 px-3 border border-black bg-white">
+                  삭제
+                </button>
+              </div>
+            </div>
+            <div class="w-full pt-4">
+              <table id="rightTable" class="w-4/5 mx-auto">
+                <tr>
+                  <th>학습명</th>
+                  <td colspan="2">이미지 딥러닝1</td>
+                </tr>
+                <tr>
+                  <th>상태</th>
+                  <td colspan="2">Completed</td>
+                </tr>
+                <tr>
+                  <th>생성자</th>
+                  <td colspan="2">홍길동</td>
+                </tr>
+                <tr>
+                  <th>생성일</th>
+                  <td colspan="2">2023-08-10</td>
+                </tr>
+                <tr>
+                  <th>모델</th>
+                  <td colspan="2"></td>
+                </tr>
+                <tr>
+                  <th>데이타셋</th>
+                  <td colspan="2"></td>
+                </tr>
+                <tr>
+                  <th rowspan="3">파라미터</th>
+                  <td>학습율</td>
+                  <td>0.001</td>
+                </tr>
+                <tr>
+                  <td>Epoch</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>배치크기</td>
+                  <td>100</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
